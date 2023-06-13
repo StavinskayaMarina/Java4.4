@@ -15,9 +15,9 @@ public class GameTest {
         games.register(players2);
         games.register(players3);
 
-        Player[] expected = {players1,players2,players3};
+        Player[] expected = {players1, players2, players3};
 
-        Assertions.assertArrayEquals (expected, games.findAll().toArray());
+        Assertions.assertArrayEquals(expected, games.findAll().toArray());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class GameTest {
         Player expected = players1;
         Player actual = games.findByName("Вася");
 
-        Assertions.assertEquals (expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class GameTest {
         games.register(players2);
 
         int expected = 1;
-        int actual = games.round("Вася","Игорь");
+        int actual = games.round("Вася", "Игорь");
 
         Assertions.assertEquals(expected, actual);
     }
@@ -74,7 +74,7 @@ public class GameTest {
         games.register(players2);
 
         int expected = 2;
-        int actual = games.round("Вася","Игорь");
+        int actual = games.round("Вася", "Игорь");
 
         Assertions.assertEquals(expected, actual);
     }
@@ -88,11 +88,8 @@ public class GameTest {
         games.register(players2);
 
         int expected = 0;
-        int actual = games.round("Вася","Игорь");
+        int actual = games.round("Вася", "Игорь");
 
         Assertions.assertEquals(expected, actual);
     }
-
-
-
 }

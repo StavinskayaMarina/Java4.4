@@ -9,24 +9,23 @@ public class Game {
         playerList.add(player);
     }
 
-   public ArrayList<Player> findAll() {
-       return playerList;
-  }
+    public ArrayList<Player> findAll() {
+        return playerList;
+    }
 
     public Player findByName(String name) {
-
         for (Player player : playerList) {
-            if (player.getName() == name) {
+            if (player.getName().equals(name)) {
                 return player;
             }
         }
         throw new NotRegisteredException(name);
     }
 
-    public int round (String playerName1, String playerName2) {
-       Player pl1 = findByName(playerName1);
-       Player pl2 = findByName(playerName2);
-       int result;
+    public int round(String playerName1, String playerName2) {
+        Player pl1 = findByName(playerName1);
+        Player pl2 = findByName(playerName2);
+        int result;
 
         if (pl1.getStrength() < pl2.getStrength()) {
             result = 2;
